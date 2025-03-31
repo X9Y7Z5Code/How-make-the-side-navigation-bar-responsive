@@ -1,41 +1,43 @@
+
 * {
   box-sizing: border-box;
 }
 
-/* Style the body */
+/* Style for the body */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
+/*Style for the content*/
 .content {
-	min-height : 200vh;
-    background : #FFF2CF;
-    margin-bottom : 20px;
+    display: flex; /* Keeps it centered horizontally */
+    flex-direction: column; /* Stack elements */
+    align-items: center; /* Keep items centered */
+    padding-top: 80px; /* Push content down from the top */
+    min-height: 200vh;
+    background: #FFF2CF;
+    margin-bottom: 20px;
 }
 
 
-/* Header/logo Title */
+/* Style for header */
 .header {
   padding: 80px;
   text-align: center;
-  background: #66B2FE;
+  background: #1E3A8A;
   margin-bottom : 20px;
 
 }
 
-/* Increase the font size of the heading */
-.header h1 {
-  font-size: 40px;
-}
-
+/*Style for the navigation bar*/
 .navbar {
-  position: sticky;
+  position: sticky; /*Making the navigation bar sticky*/
   top: 0;
   overflow: hidden;
 }
 
-/* Style the top navigation bar */
+
 .navbar {
   overflow: hidden;
   background-color: #FED966;
@@ -53,37 +55,31 @@ body {
   text-decoration: none;
 }
 
-/* Right-aligned link */
+/* navigation bar right - login / profile */
 .navbar a.right {
   float: right;
 }
 
-/* Change color on hover */
+/* Hover color */
 .navbar a:hover {
   background-color: #DA0073;
   color: black;
 }
 
+/*Showing active in the navigation bar */
 .navbar a.active {
   background-color: #DA0073;
   color: white;
 }
 
-/* Footer */
+/*Style for footer */
 .footer {
   padding: 20px;
   text-align: center;
-  background: #66B2FE;
+  background: #1E3A8A;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {
-    flex-direction: column;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+/* This will allow the navigation bar to reduce in size when the width of the page its less than 400px */
 @media screen and (max-width: 400px) {
   .navbar a {
     float: none;
