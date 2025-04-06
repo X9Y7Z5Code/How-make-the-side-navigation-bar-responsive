@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<!--style for the signup page -->
+<style>
+.wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 2rem;
+  background-color: #eee;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: #fff;
+  width: 768px;
+  height: 100%;
+  border-radius: 0.25rem;
+  box-shadow: 0rem 1rem 2rem -0.25rem rgba(0, 0, 0, 0.25);
+
+  &__heading {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+
+    & > h2 {
+      font-size: 1.75rem;
+      line-height: 1.75rem;
+      margin: 0;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    overflow-y: scroll;
+  }
+
+  &__nav {
+    border-top: 1px solid #ccc;
+    text-align: right;
+    padding: 2rem 0 1rem;
+
+    & > .button {
+      background-color: #444499;
+      box-shadow: 0rem 0.5rem 1rem -0.125rem rgba(0, 0, 0, 0.25);
+      padding: 0.8rem 2rem;
+      border-radius: 0.5rem;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+
+      &:hover {
+        box-shadow: 0rem 0rem 1rem -0.125rem rgba(0, 0, 0, 0.25);
+        transform: translateY(-0.5rem);
+      }
+    }
+
+    & > small {
+      color: #777;
+      margin-right: 1rem;
+    }
+  }
+}
+</style>
+
+<!--Bootstrap for the style-->
+<link rel= "stylesheet"  href="{{url_for('static',filename='CSS/style.css')}}"/>
+<body>
+
+<!--Header-logo-->
+<div class="header">
+<img src="{{url_for('static',filename='image/logo.png')}}" width="310" height="110" alt="The logo of the website" />
+</div>
+
+
+<!--Main navigation bar-->
+<div class="navbar">
+ <a href="/"  >MAIN</a>
+ <a href="/about">ABOUT</a>
+ <a href="/green_product">GREEN PRODUCT</a>
+ <a href="/carbon_footprint">CARBON FOOTPRINT</a>
+ <a href="/login" class="right"class="active">SIGNUP</a><!--Show active -->
+</div>
+
+
+<div class="content">
+<main class="wrap">
+      <div class="container__heading">
+      <h2>Terms & Conditions</h2>
+       <br><br>
+    </div>
+    <div class="container__content">
+    </div>
+    <div class="container__nav">
+      <small>By clicking 'Accept' you are agreeing to our terms and conditions.</small>
+     <br></br>
+      <a class="button" href="/signup">Accept</a>
+    </div>
+  </section>
+</main>
+</div>
+</div>
+
+
+
+<div class="footer">
+</div>
+
+</body>
+</html>

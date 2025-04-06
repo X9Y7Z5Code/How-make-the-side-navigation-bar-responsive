@@ -1,43 +1,45 @@
-
 * {
   box-sizing: border-box;
 }
 
-/* Style for the body */
+/* Style the body */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
-/*Style for the content*/
 .content {
-    display: flex; /* Keeps it centered horizontally */
-    flex-direction: column; /* Stack elements */
-    align-items: center; /* Keep items centered */
-    padding-top: 80px; /* Push content down from the top */
+    display: flex; /* allows the website to be centered horizontally */
+    flex-direction: column; /* This stacks elements in a column  */
+    align-items: center; /* This will keep items in the content centered  */
+    padding-top: 80px;
     min-height: 200vh;
-    background: #FFF2CF;
+    background: white ;/*Any other color might seem overwhelming*/
     margin-bottom: 20px;
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 
-/* Style for header */
+/* Header/logo Title */
 .header {
   padding: 80px;
   text-align: center;
-  background: #1E3A8A;
+  background: #7CB9E8;
   margin-bottom : 20px;
+  min-height :20vh;
 
 }
 
-/*Style for the navigation bar*/
 .navbar {
-  position: sticky; /*Making the navigation bar sticky*/
+  position: sticky;
   top: 0;
   overflow: hidden;
 }
 
-
+/* Style the top navigation bar */
 .navbar {
   overflow: hidden;
   background-color: #FED966;
@@ -55,31 +57,37 @@ body {
   text-decoration: none;
 }
 
-/* navigation bar right - login / profile */
+/* Right-aligned link */
 .navbar a.right {
   float: right;
 }
 
-/* Hover color */
+/* Change color on hover */
 .navbar a:hover {
   background-color: #DA0073;
   color: black;
 }
 
-/*Showing active in the navigation bar */
 .navbar a.active {
   background-color: #DA0073;
   color: white;
 }
 
-/*Style for footer */
+/* Footer */
 .footer {
   padding: 20px;
   text-align: center;
-  background: #1E3A8A;
+  background: #7CB9E8;
 }
 
-/* This will allow the navigation bar to reduce in size when the width of the page its less than 400px */
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
   .navbar a {
     float: none;

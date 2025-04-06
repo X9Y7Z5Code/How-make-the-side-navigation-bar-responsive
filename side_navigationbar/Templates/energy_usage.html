@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: white;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        #description {
+            font-style: italic;
+            text-align: center;
+        }
+
+        #survey-form {
+            width: 80%;
+            background-color:#ACE1AF;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            max-width: 600px;
+            margin-bottom: 1000px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 1.125rem;
+            margin-top: 0.75rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 1.875rem;
+            padding: 0.25rem 0.3rem;
+            color: #495057;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .input-textarea {
+            min-height: 120px;
+            width: 100%;
+            padding: 0.625rem;
+            resize: vertical;
+            margin-bottom: 0.3em;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background:  #f8dc75;
+            color: inherit;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+    </style>
+
+<!--Bootstrap for the style-->
+<link rel= "stylesheet"  href="{{url_for('static',filename='CSS/style.css')}}"/>
+<body>
+
+<!--Header-logo-->
+<div class="header">
+<img src="{{url_for('static',filename='image/logo.png')}}" width="310" height="110" alt="The logo of the website" />
+</div>
+
+
+<!--Main navigation bar-->
+<div class="navbar">
+ <a href="/carbon_footprint_main">CALCULATE CARBON FOOTPRINT</a><!--Show active -->
+ <a href="/booking">BOOK NOW</a>
+ <a href="/energy_usage" class="active" >CALCULATE ENERGY USAGE</a>
+ <a href="/dashboard" class="right">DASHBOARD</a>
+</div>
+
+<form id="survey-form" action="/energy_usage" method="POST">
+    <div class="form-group">
+        <p>Enter your house type:</p>
+        <select id="house_type" name="house_type" class="form-control" required>
+            <option disabled selected value>Select an option</option>
+            <option value="detached">Detached</option>
+            <option value="semi_detached">Semi Detached</option>
+            <option value="apartment">Apartment</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="bedroom_number">Enter the number of bedrooms:</label>
+        <input id="bedroom_number" name="bedroom_number" type="number" required min="1" max="3" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <p>What is the quality of your insulation?</p>
+        <select id="insulation" name="insulation" class="form-control" required>
+            <option disabled selected value>Select an option</option>
+            <option value="excellent">Excellent</option>
+            <option value="average">Average</option>
+            <option value="poor">Poor</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <p>Heating type:</p>
+        <select id="heating" name="heating" class="form-control" required>
+            <option disabled selected value>Select an option</option>
+            <option value="electricity">Electricity</option>
+            <option value="gas">Gas</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <p>Water heating type:</p>
+        <select id="water" name="water" class="form-control" required>
+            <option disabled selected value>Select an option</option>
+            <option value="electricity">Electricity</option>
+            <option value="gas">Gas</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <p>What do you use for cooking?</p>
+        <select id="cook" name="cook" class="form-control" required>
+            <option disabled selected value>Select an option</option>
+            <option value="electricity">Electricity</option>
+            <option value="gas">Gas</option>
+        </select>
+    </div>
+
+    <br><br>
+    <div class="form-group">
+        <button id="submit" type="submit" class="submit-button">Submit</button>
+    </div>
+</form>
+
+
+
+<div class="footer">
+</div>
+
+</body>
+</html>

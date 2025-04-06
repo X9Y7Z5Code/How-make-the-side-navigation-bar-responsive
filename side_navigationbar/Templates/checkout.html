@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Montserrat:wght@600&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  align-content: center;
+  text-align: center;
+}
+
+.credit-card-form {
+  margin-left: 35%;
+  max-width: 400px;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(255, 255, 255, 0.1);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-color : black
+  color: #424242;
+  align-content: center;
+}
+
+.credit-card-form h2 {
+  margin-bottom: 10%;
+  font-size: 24px;
+  text-color:black;
+}
+
+.credit-card-form .form-group {
+  margin-bottom: 15px;
+
+}
+
+.credit-card-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #777;
+}
+
+.credit-card-form input[type="text"],
+.credit-card-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    text_color : black;
+}
+
+.credit-card-form .form-row {
+  display: flex;
+}
+
+
+.credit-card-form button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background-color: #585858;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.credit-card-form button[type="submit"]:hover {
+  background-color: #808080;
+  color: #424242;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0px 6px 10px rgba(255, 255, 255, 0.1);
+}
+
+.credit-card-form button[type="submit"]:focus {
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  color: white;
+  margin-top: 6%;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 70%;
+  text-shadow: 0 0 5px #cacaca;
+}
+
+.Image1 {
+  margin-top: 0;
+  width: 220px;
+}
+.h2 {
+  margin: 0px;
+}
+</style>
+
+<!--Bootstrap for the style-->
+<link rel= "stylesheet"  href="{{url_for('static',filename='CSS/style.css')}}"/>
+<body>
+
+<!--Header-logo-->
+<div class="header">
+<img src="{{url_for('static',filename='image/logo.png')}}" width="310" height="110" alt="The logo of the website" />
+</div>
+
+
+<!--Main navigation bar-->
+<div class="navbar">
+ <a href="/carbon_footprint_calculation"  >CALCULATE CARBON FOOTPRINT</a>
+ <a href="/booking" class="active">BOOK NOW </a><!--Show active -->
+ <a href="/energy_usage" >CALCULATE ENERGY USAGE</a>
+ <a href="/profile" class="right">PROFILE</a>
+</div>
+
+
+<div class="content">
+<body>
+  <div class="credit-card-form">
+    <h2>PAYMENT PORTAL</h2>
+
+    <form>
+      <div class="form-group">
+        <label for="card-number">Card Number</label>
+        <input type="text" id="card-number" placeholder="Card number">
+      </div>
+      <div class="form-group">
+        <label for="card-holder">Card Holder</label>
+        <input type="text" id="card-holder" placeholder="Card holder's name">
+      </div>
+      <div class="form-row">
+        <div class="form-group form-column">
+          <label for="expiry-date">Expiry Date</label>
+          <input type="text" id="expiry-date" placeholder="MM/YY">
+        </div>
+        <div class="form-group form-column">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="CVV">
+        </div>
+      </div>
+      <button type="submit" class="click-button" onclick="showLoading(event, this)">PAY NOW</button>
+    </form>
+
+ <script>
+ function showLoading(event, button) {
+  event.preventDefault(); // Prevent form submission
+
+  button.innerHTML = "Processing Payment...";
+
+ </script>
+  </div>
+</body>>
+</div>
+
+
+
+<div class="footer">
+</div>
+
+</body>
+</html>

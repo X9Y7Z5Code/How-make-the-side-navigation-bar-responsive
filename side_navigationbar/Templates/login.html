@@ -5,48 +5,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<link rel= "stylesheet"  href="{{url_for('static',filename='CSS/style.css')}}"/>
-<body>
-<div class="header">
 
-</div>
-
-<div class="navbar">
- <a href="/"  >MAIN</a>
- <a href="/about">ABOUT</a>
- <a href="/green_product">GREEN PRODUCT</a>
- <a href="/carbon_footprint">CARBON FOOTPRINT</a>
- <a href="/login" class="right" class="active">LOGIN</a>
-</div>
-
-<div class="content">
- <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
+<!--Style for the login page-->
+<style>
+div.elem-group.inlined {
+  width: 49%;
   display: inline-block;
-  border: none;
-  background: #f1f1f1;
+  float: left;
+  margin-left: 20%;
+  margin-right: 10%;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+label {
+  display: block;
+  font-family: 'Nanum Gothic';
+  padding-bottom: 10px;
+  font-size: 1.25em;
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  width: 100%;
+  padding: 10px;
+}
+
+div.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+textarea {
+  height: 250px;
 }
 
 hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+  border: 1px dotted #ccc;
 }
 
 /* Set a style for all buttons */
 button {
-  background-color: #04AA6D;
+  background-color: #7EA6E0;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -58,18 +60,7 @@ button {
 
 button:hover {
   opacity:1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
+  background-color : #D80073;
 }
 
 /* Add padding to container elements */
@@ -84,41 +75,57 @@ button:hover {
   display: table;
 }
 
-/* Change styles for cancel button and login button on extra small screens */
+/* Change the style for the login button */
 @media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
+.signupbtn {
      width: 100%;
   }
 }
 </style>
 <body>
 
+<!--bootstrap for the style -->
+<link rel= "stylesheet"  href="{{url_for('static',filename='CSS/style.css')}}"/>
+
+
+<div class="header">
+<img src="{{url_for('static',filename='image/logo.png')}}" width="310" height="110" alt="The logo of the website" />
+</div>
+
+<!--Main navigation bar-->
+<div class="navbar">
+ <a href="/"  >MAIN</a>
+ <a href="/about">ABOUT</a>
+ <a href="/green_product">GREEN PRODUCT</a>
+ <a href="/carbon_footprint">CARBON FOOTPRINT</a>
+ <a href="/login" class="right" class="active">LOGIN</a>
+</div>
+
+
+<div class="content">
  <form action="/login" METHOD="POST" style="border:1px solid #ccc">
   <div class="container">
     <h1>Login</h1>
-
     <hr>
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
+      <!--I have added placeholder for user accessibility tso the user knows what tot enter -->
+    <input type="email" placeholder="Enter Email" name="email" required>
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <p>Dont have a account? <a href="/signup" style="color:dodgerblue">Sign up</a>.</p>
+      <!--This will take the user to the signup page-->
+    <p>Don't have an account? <a href="/signup" style="color:#00308F">Sign up</a>.</p>
+    <p>Forgot password ? <a href="/reset_password" style="color:#00308F">Reset password</a>.</p>
 
     <div class="clearfix">
+        <!--This button will take the user to carbon footprint calculating page -->
       <button type="submit" class="signupbtn">Login </button>
     </div>
   </div>
 
 </form>
-
-</body>
-</html>
-</div>
-<div class="main"></div> <!-- Flexible space to make the layout fill the page -->
 </div>
 
+<!--Footer-->
 <div class="footer">
 </div>
 

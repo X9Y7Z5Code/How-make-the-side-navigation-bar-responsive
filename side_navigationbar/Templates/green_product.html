@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+
+<!--Style for the images and the text-->
+<style>
+  .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  max-width: 600px;
+  max-height:300px;
+}
+
+.text {
+  font-size: 20px;
+  padding-left: 40px;
+}
+    </>
+</style>
+
+<!--Bootstrap for style-->
+<link rel= "stylesheet"  href="{{url_for('static',filename='CSS/style.css')}}"/>
+<body>
+
+<!--header - logo-->
+<div class="header">
+<img src="{{url_for('static',filename='image/logo.png')}}" width="310" height="110" alt="The logo of the website" />
+</div>
+
+<!--Main navigation bar-->
+<div class="navbar">
+ <a href="/"  >MAIN</a>
+ <a href="/about" >ABOUT</a>
+ <a href="/green_product" class="active">GREEN PRODUCT</a><!--Shows Active-->
+ <a href="/carbon_footprint">CARBON FOOTPRINT</a>
+ <a href="/login" class="right" >LOGIN</a>
+</div>
+
+<!--Information about latest green product -->
+<div class = "content">
+    <div class="container">
+      <div class="image">
+<br><br>
+<img src="{{url_for('static',filename='image/product_1.png')}}"/>
+ </div>
+      <div class="text">
+          <p>Bifacial solar panels:<p>
+        <p>Bifacial solar panels have a reflective back or dual panes of glass holding the solar cells in place.
+            Exposing the solar cells to sunlight at the back as-well as the front. As a result, bifacial solar panels
+            have a higher efficiency, as they are capable of capturing sunlight on both sides. Since they’re made to be
+            completely transparent, they are usually frameless without metal gridlines. This makes them stronger in
+            structural integrity and easier on the eye.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="image">
+
+<br><br>
+<img src="{{url_for('static',filename='image/product_2.png')}}"/>
+ </div>
+      <div class="text">
+          <p>Air-Source Heat Pumps:<p>
+        <p>An air-source heat pump can provide efficient heating and cooling for your home. When properly installed, an air-source
+            heat pump can deliver up to two to four times more heat energy to a home than the electrical energy it
+            consumes. This is because a heat pump transfers heat rather than converting it from a fuel, like combustion
+            heating systems.</p>
+      </div>
+    </div>
+
+<div class="container">
+<div class="image">
+<br><br>
+<img src="{{url_for('static',filename='image/product_3.png')}}"/>
+ </div>
+      <div class="text">
+        <p>Energy saving windows / Doors:<p>
+        <p>reduce your energy bills and lower your carbon footprint. Find out how to reduce the amount of heat lost
+          and how to find a reputable installer. Energy efficient glazing covers both double and triple glazing.
+          These are windows with two or more glass panes in a sealed unit. You can also improve the energy efficiency
+          of your home by installing secondary glazing, or even by using heavy curtains. Having energy efficient windows
+          could help to reduce your carbon footprint and your energy bills.</p>
+
+      </div>
+    </div>
+</div>
+</div>
+
+<!--Footter -->
+<div class="footer">
+</div>
+
+</body>
+</html>

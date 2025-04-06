@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+.button {
+   border-radius : 8px;
+   padding : 14px 40px;
+   font-size : 24px;
+   background-color:#FF66B3;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+}
+
+</style>
+
+<!--Bootstrap for the style-->
+<link rel= "stylesheet"  href="{{url_for('static',filename='CSS/style.css')}}"/>
+<body>
+
+<!--Header-logo-->
+<div class="header">
+<img src="{{url_for('static',filename='image/logo.png')}}" width="310" height="110" alt="The logo of the website" />
+</div>
+
+
+<!--Main navigation bar-->
+<div class="navbar">
+ <a href="/carbon_footprint_main" class="active" >CALCULATE CARBON FOOTPRINT</a><!--Show active -->
+ <a href="/booking">BOOK NOW</a>
+ <a href="/energy_usage" >CALCULATE ENERGY USAGE</a>
+ <a href="/dashboard" class="right">DASHBOARD</a>
+</div>
+
+
+<div class="content">
+ <br><br>
+  <br><br>
+<img src="{{url_for('static',filename='image/carbon_main.png')}}" width="1250" height="300" alt="The logo of the website" />
+
+<br><br>
+ <div class="button">
+<p>To find out more take a quiz:</p>
+<a href="/carbon_footprint_calc" target="_blank">QUIZ</a>
+  </div>
+</div>
+
+
+
+<div class="footer">
+</div>
+
+</body>
+</html>

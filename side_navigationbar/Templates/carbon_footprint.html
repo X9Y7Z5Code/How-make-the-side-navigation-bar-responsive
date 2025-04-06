@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+
+<!--Style for the sub navigation bar-->
+<style>
+
+.sub_bar {
+  top: 0;
+  overflow: hidden;
+}
+
+/* Style the top navigation bar */
+.sub_bar {
+  overflow: hidden;
+  background-color: #7CB9E8;/*I changed the carbon_footprint page navigation bar color*/
+  margin-bottom : 20px;
+  width: 50%;
+  min-width: 70%;
+}
+
+
+/* Style the navigation bar links */
+.sub_bar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.sub_bar a:hover {
+  background-color: #DA0073;
+  color: black;
+}
+
+.sub_bar a.active {
+  background-color: #DA0073;
+  color: white;
+}
+
+div.content {
+  margin-left:0px;
+  padding: 1px 16px;
+  height: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .sub_bar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sub_bar a {float: left;}
+  div.content {margin-left: 0;}
+}
+</style>
+
+<!--bootstrap for style.css-->
+<link rel= "stylesheet"  href="{{url_for('static',filename='CSS/style.css')}}"/>
+<body>
+
+<!-- Rolsa technology logo-->
+<div class="header">
+<img src="{{url_for('static',filename='image/logo.png')}}" width="310" height="110" alt="The logo of the website" />
+</div>
+
+<!--Main navigation bar-->
+<div class="navbar">
+ <a href="/">MAIN</a>
+ <a href="/about" >ABOUT</a>
+ <a href="/green_product">GREEN PRODUCT</a>
+ <a href="/carbon_footprint" class="active">CARBON FOOTPRINT</a><!--Shows active -->
+ <a href="/login" class="right" >LOGIN</a>
+</div>
+
+
+<div class = "content">
+<br><br>
+<br><br>
+<!--Sub navigation bar, so it's easy for the user to go to the exact location -->
+  <div class ="sub_bar">
+      <!-- This navigation abr will have tags e.g. top sand the corresponded section of text will use this tag as an id
+       which mean the user will be taken to the price of text they want  -->
+    <a href="#top">Use heating controls</a>
+    <a href="#middle">Reduce, reuse, recycle</a>
+    <a href="#bottom">Food for thought</a>
+  </div>
+
+<main>
+  <article>
+      <br><br>
+     <img src="{{url_for('static',filename='image/cf_image.png')}}" width="1200" height="300"/>
+
+    <section id="top">
+      <h2>Use heating controls</h2>
+      <p>For most of us, the first step in cutting carbon emissions it to take control of our heating. We can reduce our
+          carbon emissions and energy usage by making sure we’re not using more heating than we need. Heating controls
+          are evolving rapidly and investing in modern, easy to use controls is a good way to make sure you’re only
+          using heating when necessary. To do this effectively, for a central heating system you’ll need a timer or
+          programmer, a room thermostat and thermostatic radiator valves. Smart heating controls are available for all
+          types of heating system, including electric storage heaters. Some systems include automation features, which
+          can help by working out exactly when to turn the heating on and off.</p>
+
+    </section>
+    <section id="middle">
+
+      <h2>Reduce, reuse, recycle</h2>
+        <img src="{{url_for('static',filename='image/recycle.png')}}" width="1200" height="300" alt="image of a charging station" />
+        <p>As well as the energy we use directly in our homes, every product we buy has a carbon footprint: the energy
+            used in making that product and getting it to you will almost certainly have caused some carbon emissions.
+            One way of reducing emissions from products at home is to reduce the amount you consume. You should also try
+            to re-use wherever possible and recycle when you no longer need something. Local authority and council
+            recycling is supplemented by private initiatives – recyclenow, managed by WRAP, has a tool that helps you
+            recycle goods in your area.<p>
+
+    </section>
+    <section id="bottom">
+      <img src="{{url_for('static',filename='image/slide_3.png')}}" width="1200" height="300" alt="image of a charging station" />
+      <h2>Food for thought</h2>
+        <p>Research carried out in 2018 revealed that meat and dairy uses 83% of farmland and produces 60% of
+            agriculture’s greenhouse gas emissions. According to the Vegetarian Society, by eating vegetarian food for a
+            year, you could save the same volume of carbon emissions as taking a small family car off the road for six
+            months. Food that’s grown locally and in season will travel fewer ‘food miles’ before it makes it to your
+            plate. This seasonal fruit and vegetable calendar shows you what food is in season throughout the year.
+            Around one third of the food produced in the world for human consumption – around 1.3 billion tonnes –
+            is wasted. This food ends up in landfill, which releases methane gas, speeding up the impact of climate
+            change. Throwing less away food makes economic, as well as environmental, sense. Recipe planning can help
+            you manage your food more effectively, or find more tips in our blog about food waste.</p>
+
+    </section>
+  </article>
+</main>
+</div>
+
+<div class="footer">
+</div>
+
+</body>
+</html>

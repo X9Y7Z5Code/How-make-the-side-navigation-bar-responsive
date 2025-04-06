@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: white;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        #description {
+            font-style: italic;
+            text-align: center;
+        }
+
+        #survey-form {
+            width: 80%;
+            background-color: #bbe0ee;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            max-width: 1000px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 1.125rem;
+            margin-top: 0.75rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 1.875rem;
+            padding: 0.25rem 0.3rem;
+            color: #495057;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .input-textarea {
+            min-height: 120px;
+            width: 100%;
+            padding: 0.625rem;
+            resize: vertical;
+            margin-bottom: 0.3em;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background: #02989e;
+            color: inherit;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+    </style>
+
+<!--Bootstrap for the style-->
+<link rel= "stylesheet"  href="{{url_for('static',filename='CSS/style.css')}}"/>
+<body>
+
+<!--Header-logo-->
+<div class="header">
+<img src="{{url_for('static',filename='image/logo.png')}}" width="310" height="110" alt="The logo of the website" />
+</div>
+
+
+<!--Main navigation bar-->
+<div class="navbar">
+ <a href="/carbon_footprint_main" class="active" >CALCULATE CARBON FOOTPRINT</a><!--Show active -->
+ <a href="/booking">BOOK NOW</a>
+ <a href="/energy_usage" >CALCULATE ENERGY USAGE</a>
+ <a href="/dashboard" class="right">DASHBOARD</a>
+</div>
+
+<form id="survey-form" action="/carbon_footprint_calc" method="POST">
+    <div class="form-group">
+        <label for="electricity">How much was your last electricity bill?</label>
+        <input id="electricity" name="electricity" type="number" class="form-control" placeholder="Enter electricity bill" required>
+    </div>
+
+    <div class="form-group">
+        <label for="gas">How much was your last gas bill?</label>
+        <input id="gas" name="gas" type="number" class="form-control" placeholder="Enter gas bill" required>
+    </div>
+
+    <div class="form-group">
+        <label for="oil">How much was your last oil bill?</label>
+        <input id="oil" name="oil" type="number" class="form-control" placeholder="Enter oil bill" required>
+    </div>
+
+    <div class="form-group">
+        <label for="car">What is your total yearly mileage on your car? (if you own a car)</label>
+        <input id="car" name="car" type="number" class="form-control" placeholder="Enter total car mileage" required>
+    </div>
+
+    <div class="form-group">
+        <label for="flights">How many flights have you taken in the past year? (in hours)</label>
+        <input id="flights" name="flights" type="number" class="form-control" placeholder="Enter total hours of flight" required>
+    </div>
+
+    <div class="form-group">
+        <p>Do you recycle newspapers?</p>
+        <select id="recycle_newspaper" name="recycle_newspaper" class="form-control" required>
+            <option disabled selected value>Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <p>Do you recycle aluminum and tin?</p>
+        <select id="recycle_tin" name="recycle_tin" class="form-control" required>
+            <option disabled selected value>Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+
+    <br><br>
+    <div class="form-group">
+        <button id="submit" type="submit" class="submit-button">Submit</button>
+    </div>
+</form>
+
+    </div>
+
+
+<div class="footer">
+</div>
+
+</body>
+</html>
